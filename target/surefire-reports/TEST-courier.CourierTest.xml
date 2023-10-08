@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="courier.CourierTest" time="3.902" tests="5" errors="0" skipped="0" failures="2">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.19+7-LTS"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk11.0.19_7\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\luvd8\projects\Sprint_7"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\luvd8\projects\Sprint_7"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="java.runtime.version" value="11.0.19+7-LTS"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\luvd8\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="classworlds.conf" value="D:\apache-maven-3.9.3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\Amazon Corretto\jdk11.0.19_7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Amazon Corretto\jdk11.0.19_7\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\System32\HWAudioDriverLibs;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;D:\apache-maven-3.9.3\bin;C:\Users\luvd8\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\luvd8\AppData\Local\Programs\Python\Python311\;C:\Users\luvd8\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2022.3.2\bin;;D:\IntelliJ IDEA Community Edition 2022.3.2\bin;;C:\Users\luvd8\.dotnet\tools;D:\apache-maven-3.9.3\bin;C:\Users\luvd8\AppData\Local\GitHubDesktop\bin;C:\Users\luvd8\allure-2.24.0\bin;;."/>
+    <property name="maven.conf" value="D:\apache-maven-3.9.3/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="D:\apache-maven-3.9.3\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\luvd8"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="luvd8"/>
+    <property name="java.class.path" value="D:\apache-maven-3.9.3\boot\plexus-classworlds-2.7.0.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher surefire-report:report"/>
+    <property name="java.home" value="C:\Program Files\Amazon Corretto\jdk11.0.19_7"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="11.0.19"/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
+    <property name="sun.stderr.encoding" value="cp866"/>
+    <property name="maven.home" value="D:\apache-maven-3.9.3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2023-04-18"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-11/issues/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vendor.version" value="Corretto-11.0.19.7.1"/>
+    <property name="sun.stdout.encoding" value="cp866"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="testCreateCourierWithExistingLogin" classname="courier.CourierTest" time="3.051"/>
+  <testcase name="createCourier" classname="courier.CourierTest" time="0.248">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;409&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <409>.
+
+	at courier.CourierTest.createCourier(CourierTest.java:27)
+]]></failure>
+    <system-out><![CDATA[Request method:	POST
+Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "login": "n1212",
+    "password": "1234",
+    "firstName": "saske"
+}
+HTTP/1.1 409 Conflict
+Access-Control-Allow-Origin: *
+Content-Length: 112
+Content-Type: application/json; charset=utf-8
+Date: Sun, 08 Oct 2023 18:21:36 GMT
+ETag: W/"70-sLG1ZktNk+Ab3iaKUMwxkdL4FJo"
+Set-Cookie: _yasc=qlqXYRPMiVSzZH3GVV4Un3hVKc5D3WJSPxfHNxr1BwNIr62ubCMO7G6nkcG7Ij3TpA==; domain=.praktikum-services.ru; path=/; expires=Wed, 05 Oct 2033 18:21:36 GMT; secure
+X-Powered-By: Express
+X-Request-Id: 1696789296935632-1216357278644418575
+
+{
+    "code": 409,
+    "message": "Этот логин уже используется. Попробуйте другой."
+}
+]]></system-out>
+  </testcase>
+  <testcase name="testAvtorizationCourierWithMissingFields" classname="courier.CourierTest" time="0.161"/>
+  <testcase name="deleteCourier" classname="courier.CourierTest" time="0.188">
+    <failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <404>.
+
+	at courier.CourierTest.deleteCourier(CourierTest.java:99)
+]]></failure>
+    <system-out><![CDATA[Request method:	PUT
+Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier/cancel
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "login": "n1212",
+    "password": "1234",
+    "firstName": "saske"
+}
+HTTP/1.1 404 Not Found
+Access-Control-Allow-Origin: *
+Content-Length: 35
+Content-Type: application/json; charset=utf-8
+Date: Sun, 08 Oct 2023 18:21:37 GMT
+ETag: W/"23-Yvz185z7FSkcImycPnr136En0mc"
+Set-Cookie: _yasc=i62oxthApYVHU5AjjFWwYPZfKme2zhHgzs6Xz89A6VyG9mTv4UZ5sEkmJ5uxn8MpjQ==; domain=.praktikum-services.ru; path=/; expires=Wed, 05 Oct 2033 18:21:37 GMT; secure
+X-Powered-By: Express
+X-Request-Id: 1696789297354431-5083235736032214649
+
+{
+    "code": 404,
+    "message": "Not Found."
+}
+]]></system-out>
+  </testcase>
+  <testcase name="testCreateDuplicateCourier" classname="courier.CourierTest" time="0.193"/>
+</testsuite>

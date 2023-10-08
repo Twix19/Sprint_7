@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: courier.CourierTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.902 sec <<< FAILURE! - in courier.CourierTest
+createCourier(courier.CourierTest)  Time elapsed: 0.248 sec  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <409>.
+
+	at courier.CourierTest.createCourier(CourierTest.java:27)
+
+deleteCourier(courier.CourierTest)  Time elapsed: 0.188 sec  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <404>.
+
+	at courier.CourierTest.deleteCourier(CourierTest.java:99)
+

@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: order.OrderTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.963 sec <<< FAILURE! - in order.OrderTest
+deleteOrder[0](order.OrderTest)  Time elapsed: 0.092 sec  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <400>.
+
+	at order.OrderTest.deleteOrder(OrderTest.java:82)
+
+deleteOrder[1](order.OrderTest)  Time elapsed: 0.098 sec  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <400>.
+
+	at order.OrderTest.deleteOrder(OrderTest.java:82)
+
