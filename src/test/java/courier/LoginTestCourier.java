@@ -1,53 +1,45 @@
 package courier;
 
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import org.example.courier.Courier;
+import org.example.courier.LoginCourier;
 import org.junit.Test;
 
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 public class LoginTestCourier {
     private static final String BAZE_URL = "https://qa-scooter.praktikum-services.ru";
     private static final String COURIER_PATH = "/api/v1/courier/login";
+    LoginCourier loginCourier = new LoginCourier("n123inja12", "1234", "saske");
+    Courier courier = new Courier("ninja", "1234", "saske");
+    LoginCourierAPI loginCourierAPI = new LoginCourierAPI();
     @Test
-    public void testAvtorizationOfCourier(){
-        String jsonString = "{\"login\": \"n123inja12\", \"password\": \"1234\"}";
-        var jsonMap = Map.of("login", "n123inja12", "password", "1234");
-        given()
-                .contentType(ContentType.JSON)
-                .baseUri(BAZE_URL)
-                .body(jsonString)
-                .when()
-                .post(COURIER_PATH)
-                .then().log().all()
+    public  void testAvtorizationOfCourier(){
+        Response response = loginCourierAPI.testAvtorizationOfCourier();
+        response.then().log().all()
                 .assertThat()
                 .statusCode(200)
                 .extract()
                 .path("id", String.valueOf(equalTo(" 224572")));
     }
     @Test
-    public void testAvtorizationWithMissingField() { // 504
-        given()
-                .contentType("application/json")
-                .body("{ \"login\": \"ninja\", \"password\": }")
-                .when()
-                .post(BAZE_URL +  COURIER_PATH)
-                .then()
-                .statusCode(400)
+    public void testAvtorizationWithMissingField(){
+    Response response = loginCourierAPI.testAvtorizationWithMissingField();
+    response .then()
+                .statusCode(SC_BAD_REQUEST)
                 .extract()
                 .path("error", String.valueOf(equalTo("Недостаточно данных для создания учетной записи")));
     }
     @Test
     public void testAvtorizationWithWrongField() {
-        given()
-                .contentType("application/json")
-                .body("{ \"login\": \"nina\", \"password\": \"1234\" }")
-                .when()
-                .post(BAZE_URL +  COURIER_PATH)
-                .then()
-                .statusCode(404)
+       Response response = loginCourierAPI.testAvtorizationWithWrongField();
+       response  .then()
+                .statusCode(SC_NOT_FOUND)
                 .extract()
                 .path("error", String.valueOf(equalTo("Учетная запись не найдена")));
     }
