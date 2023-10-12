@@ -1,4 +1,8 @@
 courier\CourierTest.class
 order\OrderTest.class
 courier\LoginTestCourier.class
+order\OrderAPI.class
+courier\CourierAPI.class
 order\ListOfOrdersTest.class
+courier\LoginCourierAPI.class
+order\ListOfOrdersAPI.class

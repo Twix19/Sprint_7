@@ -16,7 +16,7 @@ public class CourierAPI {
 
 
         public Response createCourier(){
-            Courier courier = new Courier("1234rier", "1234", "saske");
+            Courier courier = new Courier("1234rouyr", "1234", "saske");
             return given().log().all()
                     .contentType(ContentType.JSON)
                     .baseUri(BAZE_URL)
