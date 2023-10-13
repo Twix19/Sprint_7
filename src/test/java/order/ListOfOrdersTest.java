@@ -1,11 +1,10 @@
 package order;
 
-import courier.CourierAPI;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.example.order.ListOfOrders;
+import org.example.order.ListOfOrdersAPI;
 import org.junit.Test;
-import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 

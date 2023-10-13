@@ -1,21 +1,14 @@
 package order;
 
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import org.example.order.Order;
-import org.junit.After;
+import org.example.order.OrderAPI;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
-import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.assertEquals;
+
 
 @RunWith(Parameterized.class)
 public class OrderTest {
@@ -26,7 +19,7 @@ public class OrderTest {
     private String color;
 
     public OrderTest(String color) {
-        this.color = color;
+       this.color = color;
     }
 
     @Parameterized.Parameters
@@ -50,19 +43,19 @@ public class OrderTest {
                 .path("track", String.valueOf(equalTo("124124")));
     }
 
-    @After
-   public void deleteOrder() {
-       String jsonString = "{\"firstName\": \"Naruto\", \"lastName\": \"Uchiha\", \"address\": \"Konoha, 142 apt.\", \"metroStation\": \"4\", \"phone\": \"+7 800 355 35 35\", \"rentTime\": \"5\", \"deliveryDate\": \"2020-06-06\", \"comment\": \"Saske, come back to Konoha\", \"color\":[" + color + "]}";
-        given()
-                .contentType(ContentType.JSON)
-                .body(jsonString )
-                .when()
-                .put(BAZE_URL + "/api/v1/orders/cancel")
-                .then()
-                .statusCode(SC_CREATED)
-                .extract()
-                .path("ok");
-    }
+   // @After
+  // public void deleteOrder() {
+    //   String jsonString = "{\"firstName\": \"Naruto\", \"lastName\": \"Uchiha\", \"address\": \"Konoha, 142 apt.\", \"metroStation\": \"4\", \"phone\": \"+7 800 355 35 35\", \"rentTime\": \"5\", \"deliveryDate\": \"2020-06-06\", \"comment\": \"Saske, come back to Konoha\", \"color\":[" + color + "]}";
+      //  given()
+        //        .contentType(ContentType.JSON)
+          //      .body(jsonString )
+            //    .when()
+              //  .put(BAZE_URL + "/api/v1/orders/cancel")
+              //  .then()
+              //  .statusCode(SC_CREATED)
+              //  .extract()
+              //  .path("ok");
+    //}
 }
 
 

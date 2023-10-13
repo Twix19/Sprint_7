@@ -1,12 +1,10 @@
 package courier;
 
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.example.courier.Courier;
 import org.example.courier.LoginCourier;
+import org.example.courier.LoginCourierAPI;
 import org.junit.Test;
-
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.*;
@@ -20,7 +18,7 @@ public class LoginTestCourier {
     LoginCourierAPI loginCourierAPI = new LoginCourierAPI();
     @Test
     public  void testAvtorizationOfCourier(){
-        Response response = loginCourierAPI.testAvtorizationOfCourier();
+        Response response = loginCourierAPI.testAvtorizationOfCourier(String.valueOf(loginCourier.getClass()));
         response.then().log().all()
                 .assertThat()
                 .statusCode(200)
@@ -29,7 +27,7 @@ public class LoginTestCourier {
     }
     @Test
     public void testAvtorizationWithMissingField(){
-    Response response = loginCourierAPI.testAvtorizationWithMissingField();
+    Response response = loginCourierAPI.testAvtorizationOfCourier(String.valueOf(loginCourier.getClass()));
     response .then()
                 .statusCode(SC_BAD_REQUEST)
                 .extract()
@@ -43,5 +41,7 @@ public class LoginTestCourier {
                 .extract()
                 .path("error", String.valueOf(equalTo("Учетная запись не найдена")));
     }
+
+
 
 }
