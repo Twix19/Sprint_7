@@ -1,30 +1,20 @@
 package courier;
 
-import io.restassured.http.ContentType;
-import org.example.courier.Courier;
+
 import org.example.courier.CourierAPI;
-import org.example.courier.CourierSecond;
 import org.junit.After;
 import org.junit.Test;
-
 import java.io.IOException;
-
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.apache.http.HttpStatus.*;
 
 
 public class CourierTest {
-    private static final String BAZE_URL = "https://qa-scooter.praktikum-services.ru";
-    private static final String COURIER_PATH = "/api/v1/courier";
-    Courier courier = new Courier("ninja", "1234", "saske");
-    CourierSecond courierSecond = new CourierSecond("ninja");
     CourierAPI courierAPI = new CourierAPI();
-
 
     @Test
     public void createCourier(){
-        courierAPI.createCourier()
+        courierAPI.sendCreationDataOfCourier()
                 .then().log().all()
                 .assertThat()
                 .statusCode(SC_CREATED)
@@ -33,8 +23,8 @@ public class CourierTest {
     }
     @Test
     public void testCreateDuplicateCourier() {
-        courierAPI.createCourier();
-        courierAPI.createCourier()
+        courierAPI.sendCreationDataOfCourier();
+        courierAPI.sendCreationDataOfCourier()
                 .then()
                 .statusCode(SC_CONFLICT)
                 .extract()
@@ -44,8 +34,8 @@ public class CourierTest {
 
     @Test
     public void testCreateCourierWithExistingLogin() {
-        courierAPI.createCourierWithExistingLogin();
-        courierAPI.createCourierWithExistingLogin()
+        courierAPI.sendCourierCreationRequest();
+        courierAPI.sendCourierCreationRequest()
                 .then()
                 .statusCode(SC_CONFLICT)
                 .extract()

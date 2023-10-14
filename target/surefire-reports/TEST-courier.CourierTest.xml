@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="courier.CourierTest" time="4.85" tests="4" errors="0" skipped="0" failures="4">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="courier.CourierTest" time="4.165" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.19+7-LTS"/>
@@ -27,7 +27,7 @@
     <property name="os.name" value="Windows 11"/>
     <property name="classworlds.conf" value="D:\apache-maven-3.9.3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="java.library.path" value="C:\Program Files\Amazon Corretto\jdk11.0.19_7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Amazon Corretto\jdk11.0.19_7\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\System32\HWAudioDriverLibs;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;D:\apache-maven-3.9.3\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\luvd8\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\luvd8\AppData\Local\Programs\Python\Python311\;C:\Users\luvd8\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2022.3.2\bin;;D:\IntelliJ IDEA Community Edition 2022.3.2\bin;;C:\Users\luvd8\.dotnet\tools;D:\apache-maven-3.9.3\bin;C:\Users\luvd8\AppData\Local\GitHubDesktop\bin;C:\Users\luvd8\allure-2.24.0\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Amazon Corretto\jdk11.0.19_7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Amazon Corretto\jdk11.0.19_7\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\System32\HWAudioDriverLibs;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;D:\apache-maven-3.9.3\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Users\luvd8\allure-2.24.0\bin;C:\Users\luvd8\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\luvd8\AppData\Local\Programs\Python\Python311\;C:\Users\luvd8\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2022.3.2\bin;;D:\IntelliJ IDEA Community Edition 2022.3.2\bin;;C:\Users\luvd8\.dotnet\tools;D:\apache-maven-3.9.3\bin;C:\Users\luvd8\AppData\Local\GitHubDesktop\bin;C:\Users\luvd8\allure-2.24.0\bin;;."/>
     <property name="maven.conf" value="D:\apache-maven-3.9.3/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
@@ -64,194 +64,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testCreateCourierWithExistingLogin" classname="courier.CourierTest" time="3.417">
-    <failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <201> but was <404>.
-
-	at courier.CourierTest.deleteCourier(CourierTest.java:71)
-]]></failure>
-    <system-out><![CDATA[Request method:	PUT
-Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier/cancel
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "login": "n1212",
-    "password": "1234",
-    "firstName": "saske"
-}
-HTTP/1.1 404 Not Found
-Access-Control-Allow-Origin: *
-Content-Length: 35
-Content-Type: application/json; charset=utf-8
-Date: Thu, 12 Oct 2023 09:19:42 GMT
-ETag: W/"23-Yvz185z7FSkcImycPnr136En0mc"
-Set-Cookie: _yasc=J0Mx9VVp+P1iNi01QG/+2G3k95SAZiQNLxeBAl5uXSsEsT6FJ59rigqeOJTrL5Z7aA==; domain=.praktikum-services.ru; path=/; expires=Sun, 09 Oct 2033 09:19:42 GMT; secure
-X-Powered-By: Express
-X-Request-Id: 1697102382972381-7478540523851698619
-
-{
-    "code": 404,
-    "message": "Not Found."
-}
-]]></system-out>
-  </testcase>
-  <testcase name="createCourier" classname="courier.CourierTest" time="0.321">
-    <failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <201> but was <404>.
-
-	at courier.CourierTest.deleteCourier(CourierTest.java:71)
-]]></failure>
-    <system-out><![CDATA[Request method:	POST
-Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "login": "1234rier",
-    "password": "1234",
-    "firstName": "saske"
-}
-HTTP/1.1 201 Created
-Access-Control-Allow-Origin: *
-Content-Length: 11
-Content-Type: application/json; charset=utf-8
-Date: Thu, 12 Oct 2023 09:19:43 GMT
-ETag: W/"b-Ai2R8hgEarLmHKwesT1qcY913ys"
-Set-Cookie: _yasc=YF7Xv6cv+Pl1HuJgHGTseT2KolJdBiOu8lHxMeI0QG0sIlDFjCavT0Zqv8mJBYp5qg==; domain=.praktikum-services.ru; path=/; expires=Sun, 09 Oct 2033 09:19:43 GMT; secure
-X-Powered-By: Express
-X-Request-Id: 1697102383156352-8333447500085309669
-
-{
-    "ok": true
-}
-Request method:	PUT
-Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier/cancel
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "login": "n1212",
-    "password": "1234",
-    "firstName": "saske"
-}
-HTTP/1.1 404 Not Found
-Access-Control-Allow-Origin: *
-Content-Length: 35
-Content-Type: application/json; charset=utf-8
-Date: Thu, 12 Oct 2023 09:19:43 GMT
-ETag: W/"23-Yvz185z7FSkcImycPnr136En0mc"
-Set-Cookie: _yasc=MYDr01k8rqpDngEPYBYCSgWFAqpWKX9OpgFtxt67sZhCnqjtCtKmrppPMUBdzM/+; domain=.praktikum-services.ru; path=/; expires=Sun, 09 Oct 2033 09:19:43 GMT; secure
-X-Powered-By: Express
-X-Request-Id: 1697102383340232-8939116932690429953
-
-{
-    "code": 404,
-    "message": "Not Found."
-}
-]]></system-out>
-  </testcase>
-  <testcase name="testAvtorizationCourierWithMissingFields" classname="courier.CourierTest" time="0.459">
-    <failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <201> but was <404>.
-
-	at courier.CourierTest.deleteCourier(CourierTest.java:71)
-]]></failure>
-    <system-out><![CDATA[Request method:	PUT
-Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier/cancel
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "login": "n1212",
-    "password": "1234",
-    "firstName": "saske"
-}
-HTTP/1.1 404 Not Found
-Access-Control-Allow-Origin: *
-Content-Length: 35
-Content-Type: application/json; charset=utf-8
-Date: Thu, 12 Oct 2023 09:19:43 GMT
-ETag: W/"23-Yvz185z7FSkcImycPnr136En0mc"
-Set-Cookie: _yasc=5wFEHiRT1691oCgynWOcsPobc/sEQyJMwXo9gBjrRLuHTwHyXiflYdOMkTxo/zfn; domain=.praktikum-services.ru; path=/; expires=Sun, 09 Oct 2033 09:19:43 GMT; secure
-X-Powered-By: Express
-X-Request-Id: 1697102383772251-13893944644736146007
-
-{
-    "code": 404,
-    "message": "Not Found."
-}
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateDuplicateCourier" classname="courier.CourierTest" time="0.594">
-    <failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <201> but was <404>.
-
-	at courier.CourierTest.deleteCourier(CourierTest.java:71)
-]]></failure>
-    <system-out><![CDATA[Request method:	PUT
-Request URI:	https://qa-scooter.praktikum-services.ru/api/v1/courier/cancel
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "login": "n1212",
-    "password": "1234",
-    "firstName": "saske"
-}
-HTTP/1.1 404 Not Found
-Access-Control-Allow-Origin: *
-Content-Length: 35
-Content-Type: application/json; charset=utf-8
-Date: Thu, 12 Oct 2023 09:19:44 GMT
-ETag: W/"23-Yvz185z7FSkcImycPnr136En0mc"
-Set-Cookie: _yasc=sDywDv36xXTaKONjyLNFmCbk1/PnEynW/z9KJ+QkiyN4zmhS4iqY5siEVOldk++SEg==; domain=.praktikum-services.ru; path=/; expires=Sun, 09 Oct 2033 09:19:44 GMT; secure
-X-Powered-By: Express
-X-Request-Id: 1697102384302145-17623549276754420179
-
-{
-    "code": 404,
-    "message": "Not Found."
-}
-]]></system-out>
-  </testcase>
+  <testcase name="testCreateCourierWithExistingLogin" classname="courier.CourierTest" time="2.964"/>
+  <testcase name="createCourier" classname="courier.CourierTest" time="0.487"/>
+  <testcase name="testCreateDuplicateCourier" classname="courier.CourierTest" time="0.666"/>
 </testsuite>

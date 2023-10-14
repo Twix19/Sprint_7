@@ -1,5 +1,9 @@
-org\example\order\ListOfOrders.class
+org\example\courier\CourierGenerator.class
+org\example\order\OrderAPI.class
 org\example\order\Order.class
+org\example\courier\CourierAPI.class
 org\example\courier\LoginCourier.class
+org\example\order\ListOfOrdersAPI.class
+org\example\courier\LoginCourierAPI.class
+org\example\order\ListOfOrders.class
 org\example\courier\Courier.class
-org\example\courier\CourierSecond.class

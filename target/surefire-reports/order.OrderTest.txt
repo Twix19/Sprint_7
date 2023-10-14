@@ -1,32 +1,32 @@
 -------------------------------------------------------------------------------
 Test set: order.OrderTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 1.518 sec <<< FAILURE! - in order.OrderTest
-testCreateOrder[0](order.OrderTest)  Time elapsed: 0.332 sec  <<< FAILURE!
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.773 sec <<< FAILURE! - in order.OrderTest
+testCreateOrder[0](order.OrderTest)  Time elapsed: 0.2 sec  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
-Expected status code <201> but was <400>.
+Expected status code <200> but was <400>.
 
-	at order.OrderTest.deleteOrder(OrderTest.java:62)
+	at order.OrderTest.deleteOrder(OrderTest.java:55)
 
-testCreateOrder[1](order.OrderTest)  Time elapsed: 0.406 sec  <<< FAILURE!
+testCreateOrder[1](order.OrderTest)  Time elapsed: 0.22 sec  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
-Expected status code <201> but was <400>.
+Expected status code <200> but was <400>.
 
-	at order.OrderTest.deleteOrder(OrderTest.java:62)
+	at order.OrderTest.deleteOrder(OrderTest.java:55)
 
-testCreateOrder[2](order.OrderTest)  Time elapsed: 0.514 sec  <<< FAILURE!
+testCreateOrder[2](order.OrderTest)  Time elapsed: 0.184 sec  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
-Expected status code <201> but was <400>.
+Expected status code <200> but was <400>.
 
-	at order.OrderTest.deleteOrder(OrderTest.java:62)
+	at order.OrderTest.deleteOrder(OrderTest.java:55)
 
-testCreateOrder[3](order.OrderTest)  Time elapsed: 0.266 sec  <<< FAILURE!
+testCreateOrder[3](order.OrderTest)  Time elapsed: 0.169 sec  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
-Expected status code <201> but was <400>.
+Expected status code <200> but was <400>.
 
-	at order.OrderTest.deleteOrder(OrderTest.java:62)
+	at order.OrderTest.deleteOrder(OrderTest.java:55)
 
