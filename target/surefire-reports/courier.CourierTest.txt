@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: courier.CourierTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.27 sec - in courier.CourierTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.043 s - in courier.CourierTest

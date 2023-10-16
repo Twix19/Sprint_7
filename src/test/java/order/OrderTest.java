@@ -1,5 +1,7 @@
 package order;
 
+import io.qameta.allure.Description;
+import io.restassured.response.Response;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.example.order.Order;
 import org.example.order.OrderAPI;
@@ -11,7 +13,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import static org.apache.http.HttpStatus.*;
-import static org.hamcrest.CoreMatchers.*;
+import io.qameta.allure.junit4.DisplayName;
 
 
 @RunWith(Parameterized.class)
@@ -24,6 +26,8 @@ public class OrderTest {
        this.color = color;
     }
     ObjectMapper mapper = new ObjectMapper();
+
+    String tempOrderNumber;
 
 
     @Parameterized.Parameters
@@ -38,18 +42,24 @@ public class OrderTest {
     }
 
     @Test
+    @DisplayName("Создание заказа")
+    @Description("Отправляет данные о создании заказа на сервер")
     public void testCreateOrder() throws IOException {
         Order order = new Order("Naruto","Uchiha", "Konoha, 142 apt.", "4", "+7 800 355 35 35", "5", "2020-06-06", "Saske, come back to Konoha", color = color);
-        orderAPI.sendCreationDataOfOrder(order)
+        Response response = orderAPI.sendCreationDataOfOrder(order);
+        String responseBody = response.getBody().asString();
+        tempOrderNumber = responseBody.replaceAll("\\D+", "");
+        response
                 .then()
-                .statusCode(SC_CREATED)
-                .extract()
-                .path("track", String.valueOf(equalTo("124124")));
+                .assertThat()
+                .statusCode(SC_CREATED);
     }
-    @After //эндпоинт не работает
+    @After
+    @DisplayName("Отмена заказа")
     public void deleteOrder() throws IOException  {
         Order order = new Order("Naruto","Uchiha", "Konoha, 142 apt.", "4", "+7 800 355 35 35", "5", "2020-06-06", "Saske, come back to Konoha", color = color);
-          orderAPI.deleteOrder(String.valueOf(order))
+        orderAPI.sendCreationDataOfOrder(order);
+        orderAPI.deleteOrder(order, tempOrderNumber)
                   .then()
                   .assertThat()
                   .statusCode(200)

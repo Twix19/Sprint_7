@@ -1,6 +1,8 @@
 package courier;
 
 
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.example.courier.CourierAPI;
 import org.junit.After;
 import org.junit.Test;
@@ -13,6 +15,8 @@ public class CourierTest {
     CourierAPI courierAPI = new CourierAPI();
 
     @Test
+    @DisplayName("Создание курьера")
+    @Description("Метод отправляет данные курьера на сервер. В случае успешного выполнения запроса будет получен ответ со статусом 200.")
     public void createCourier(){
         courierAPI.sendCreationDataOfCourier()
                 .then().log().all()
@@ -22,6 +26,8 @@ public class CourierTest {
                 .path("ok", String.valueOf(equalTo("true")));
     }
     @Test
+    @DisplayName("Запрос с повторяющимся логином")
+    @Description("Метод отправляет данные курьера на сервер. В запросе указаны параметры контента c повторяющимся логином, базовый URL и тело запроса.")
     public void testCreateDuplicateCourier() {
         courierAPI.sendCreationDataOfCourier();
         courierAPI.sendCreationDataOfCourier()
@@ -33,6 +39,8 @@ public class CourierTest {
     }
 
     @Test
+    @DisplayName("Запрос без логина или пароля")
+    @Description("Метод отправляет данные курьера на сервер. В запросе указаны параметры контента без логина или пароля, базовый URL и тело запроса.")
     public void testCreateCourierWithExistingLogin() {
         courierAPI.sendCourierCreationRequest();
         courierAPI.sendCourierCreationRequest()
@@ -42,6 +50,8 @@ public class CourierTest {
                 .path("error", String.valueOf(equalTo("Учетная запись не найдена")));
     }
      @After
+     @DisplayName("Удаление курьера")
+     @Description("Метод отправляет запрос на удаление курьера. Для этого используется авторизация через API.")
      public void deleteCourier() throws IOException {
             courierAPI.deleteCourier()
                     .then()

@@ -15,13 +15,14 @@
         <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
         <aspectj.version>1.8.10</aspectj.version>
         <allure-junit4.version>2.21.0</allure-junit4.version>
+        <allure.version>2.15.0</allure.version>
     </properties>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>2.22.2</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
@@ -32,6 +33,10 @@
                         </property>
                     </properties>
                     <systemProperties>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.build.directory}\allure-results</value>
+                        </property>
                     </systemProperties>
                 </configuration>
                 <dependencies>
@@ -42,9 +47,16 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>2.15.0</reportVersion>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
     <dependencies>
         <dependency>
             <groupId>org.mockito</groupId>
@@ -88,7 +100,16 @@
             <artifactId>jackson-xml-databind</artifactId>
             <version>0.6.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.21.0</version>
+        </dependency>
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-rest-assured</artifactId>
+        <version>2.21.0</version>
+    </dependency>
     </dependencies>
 
 </project>

@@ -11,6 +11,7 @@ import java.io.IOException;
 public class OrderAPI {
     private static final String BAZE_URL = "https://qa-scooter.praktikum-services.ru";
     private static final String ORDER_PATH = "/api/v1/orders";
+    private static final String ORDER_CANCEL_URL = "https://qa-scooter.praktikum-services.ru/api/v1/orders/cancel";
 
     ObjectMapper mapper = new ObjectMapper();
 
@@ -31,13 +32,13 @@ public class OrderAPI {
                 .when()
                 .post(BAZE_URL + ORDER_PATH);
     }
-    public Response deleteOrder(Object object) throws IOException  {
+    public Response deleteOrder(Object object, String orderTrack) throws IOException  {
         String objAsString = mapper.writeValueAsString(object);
         String json = regexEditJson(objAsString);
         return RestAssured.given()
                 .contentType(ContentType.JSON)
                 .body(json)
                 .when()
-                .put(BAZE_URL + "/api/v1/orders/cancel");
+                .put(ORDER_CANCEL_URL + "?track=" + orderTrack);
     }
 }
